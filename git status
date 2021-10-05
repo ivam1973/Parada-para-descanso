@@ -1,0 +1,196 @@
+[33mcommit 625f1510eef636965a1af971f7ecdb893b546dfe[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: ivam1973 <steffensoliveiraivam51@gmail.com>
+Date:   Tue Oct 5 16:33:17 2021 -0300
+
+    alterações diveras
+
+[1mdiff --git a/index.html b/index.html[m
+[1mindex 3de511f..f1d2056 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -14,12 +14,12 @@[m
+         [m
+     <h1>Vamos descansar um pouquinho?</h1>[m
+     <h3>Meta: 40 minutos em 8 horas de jornada</h3>[m
+[31m-    <div class="cup">[m
+[31m-        <div class="remained" id="remained">[m
+[31m-            <span id="liters">1.5L</span>[m
+[32m+[m[32m    <div class="marcador">[m
+[32m+[m[32m        <div class="restante" id="restante">[m
+[32m+[m[32m            <span id="minutos"></span>[m
+             <small>Faltam</small>[m
+         </div>[m
+[31m-        <div class="percentage" id="percentage">[m
+[32m+[m[32m        <div class="porcentagem" id="porcentagem">[m
+             20%[m
+         </div>[m
+     </div>[m
+[36m@@ -28,15 +28,15 @@[m
+         Clique a cada paradinha para descanso[m
+     </p>[m
+     [m
+[31m-    <div class="cups">[m
+[31m-        <div class="cup cup-small">5 min</div>[m
+[31m-        <div class="cup cup-small">5 min</div>[m
+[31m-        <div class="cup cup-small">5 min</div>[m
+[31m-        <div class="cup cup-small">5 min</div>[m
+[31m-        <div class="cup cup-small">5 min</div>[m
+[31m-        <div class="cup cup-small">5 min</div>[m
+[31m-        <div class="cup cup-small">5 min</div>[m
+[31m-        <div class="cup cup-small">5 min</div>[m
+[32m+[m[32m    <div class="marcadores">[m
+[32m+[m[32m        <div class="marcador marcador-pequeno">5 min</div>[m
+[32m+[m[32m        <div class="marcador marcador-pequeno">5 min</div>[m
+[32m+[m[32m        <div class="marcador marcador-pequeno">5 min</div>[m
+[32m+[m[32m        <div class="marcador marcador-pequeno">5 min</div>[m
+[32m+[m[32m        <div class="marcador marcador-pequeno">5 min</div>[m
+[32m+[m[32m        <div class="marcador marcador-pequeno">5 min</div>[m
+[32m+[m[32m        <div class="marcador marcador-pequeno">5 min</div>[m
+[32m+[m[32m        <div class="marcador marcador-pequeno">5 min</div>[m[41m        [m
+     </div>[m
+     [m
+     <!-- SOCIAL PANEL HTML -->[m
+[36m@@ -71,7 +71,10 @@[m
+     </div>[m
+     <button class="floating-btn">[m
+         Sobre mim[m
+[31m-    </button>[m
+[32m+[m[32m    </button>[m[41m [m
+[32m+[m[32m    <small>... Adaptei dessa ideia:[m
+[32m+[m[32m            <a class="flopi" href="https://codepen.io/FlorinPop17/pen/ExajrQJ" target="_blank" target="_blank">[m[41m            [m
+[32m+[m[32m            FlorinPop17 </small> </a>[m
+     [m
+ </body>[m
+ </html>[m
+[1mdiff --git a/javas.js b/javas.js[m
+[1mindex cff412f..983560f 100644[m
+[1m--- a/javas.js[m
+[1m+++ b/javas.js[m
+[36m@@ -26,10 +26,10 @@[m [mfunction relogio(){[m
+ var timer=setInterval(relogio,1000);[m
+ // fim do relógio digital[m
+ [m
+[31m-const smallCups = document.querySelectorAll('.cup-small');[m
+[31m-const liters = document.getElementById('liters');[m
+[31m-const percentage = document.getElementById('percentage');[m
+[31m-const remained = document.getElementById('remained');[m
+[32m+[m[32mconst smallCups = document.querySelectorAll('.marcador-pequeno');[m
+[32m+[m[32mconst liters = document.getElementById('minutos');[m
+[32m+[m[32mconst percentage = document.getElementById('porcentagem');[m
+[32m+[m[32mconst remained = document.getElementById('restante');[m
+ [m
+ updateBigCup();[m
+ [m
+[36m@@ -62,7 +62,7 @@[m [mfunction highlightCups(idx) {[m
+ }[m
+ [m
+ function updateBigCup() {[m
+[31m-	const fullGlasses = document.querySelectorAll('.cup-small.full').length;[m
+[32m+[m	[32mconst fullGlasses = document.querySelectorAll('.marcador-pequeno.full').length;[m
+ 	const totalGlasses = smallCups.length;[m
+ 	[m
+ 	// hide the .percentage if the glass is empty[m
+[1mdiff --git a/style.css b/style.css[m
+[1mindex aac6d02..6f652ac 100644[m
+[1m--- a/style.css[m
+[1m+++ b/style.css[m
+[36m@@ -28,6 +28,10 @@[m [mbody {[m
+     min-height: 100vh;[m
+ }[m
+ [m
+[32m+[m[32m.flopi {[m
+[32m+[m	[32mcolor: rgb(72, 156, 142);[m
+[32m+[m[32m}[m
+[32m+[m
+ h1 {[m
+ 	margin: 10px 0 0;[m
+ }[m
+[36m@@ -37,7 +41,7 @@[m [mh3 {[m
+ 	margin: 10px 0;[m
+ }[m
+ [m
+[31m-.cup {[m
+[32m+[m[32m.marcador {[m
+     height: 200px;[m
+ 	width: 200px;[m
+     margin: 30px 0;[m
+[36m@@ -52,19 +56,19 @@[m [mh3 {[m
+     inset 0 -15px 15px rgba(255,255,255,0.05),[m
+     0 15px 15px rgba(0,0,0,0.3),[m
+     inset 0 15px 15px rgba(0,0,0,0.3);[m
+[31m-	color: #144FC6;	[m
+ 	overflow: hidden;	[m
+ }[m
+ [m
+[31m-.cups {[m
+[32m+[m[32m.marcadores {[m
+ 	display: flex;[m
+ 	align-items: center;[m
+ 	justify-content: center;[m
+ 	flex-wrap: wrap;[m
+ 	width: 280px;[m
+[32m+[m	[32mcolor: #144FC6;[m[41m	[m
+ }[m
+ [m
+[31m-.cup.cup-small {[m
+[32m+[m[32m.marcador.marcador-pequeno {[m
+ 	background-color: rgba(255, 255, 255, 0.9);	[m
+ 	cursor: pointer;[m
+ 	display: flex;[m
+[36m@@ -78,12 +82,12 @@[m [mh3 {[m
+ 	transition: 0.3s ease;[m
+ }[m
+ [m
+[31m-.cup.cup-small.full {[m
+[32m+[m[32m.marcador.marcador-pequeno.full {[m
+ 	background-color: #5c99d1;[m
+[31m-	color: #fff;[m
+[32m+[m	[32mcolor: white;[m
+ }[m
+ [m
+[31m-.remained {[m
+[32m+[m[32m.restante {[m
+ 	display: flex;[m
+ 	align-items: center;[m
+ 	justify-content: center;[m
+[36m@@ -92,16 +96,16 @@[m [mh3 {[m
+ 	transition: 0.4s ease;    [m
+ }[m
+ [m
+[31m-.remained span {[m
+[32m+[m[32m.restante span {[m
+ 	font-size: 25px;[m
+ 	font-weight: bold;[m
+ }[m
+ [m
+[31m-.remained small {[m
+[32m+[m[32m.restante small {[m
+ 	font-size: 14px;[m
+ }[m
+ [m
+[31m-.percentage {[m
+[32m+[m[32m.porcentagem{[m
+ 	background-color: #5c99d1;[m
+     margin: 0;[m
+     padding: 0;[m
+[36m@@ -165,9 +169,9 @@[m [mh3 {[m
+ }[m
+ [m
+ .social-panel p {[m
+[31m-	background-color: rgb(84, 161, 155);[m
+[32m+[m	[32mbackground-color: rgb(108, 223, 213);[m
+ 	border-radius: 65%;[m
+[31m-	color: #fff;[m
+[32m+[m	[32mcolor: #460f9e;[m
+ 	font-size: 14px;[m
+ 	line-height: 18px;[m
+ 	padding: 2px 17px 6px;[m
+[36m@@ -229,7 +233,7 @@[m [mh3 {[m
+ [m
+ .floating-btn {[m
+ 	border-radius: 62%;[m
+[31m-	background-color: rgb(84, 161, 155);[m
+[32m+[m	[32mbackground-color: rgb(108, 223, 213);[m
+ 	border: 0;	[m
+ 	color: #fff;[m
+ 	cursor: pointer;[m
