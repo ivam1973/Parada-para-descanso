@@ -26,10 +26,10 @@ function relogio(){
 var timer=setInterval(relogio,1000);
 // fim do relógio digital
 
-const smallCups = document.querySelectorAll('.cup-small');
-const liters = document.getElementById('liters');
-const percentage = document.getElementById('percentage');
-const remained = document.getElementById('remained');
+const smallCups = document.querySelectorAll('.marcador-pequeno');
+const liters = document.getElementById('minutos');
+const percentage = document.getElementById('porcentagem');
+const remained = document.getElementById('restante');
 
 updateBigCup();
 
@@ -62,7 +62,7 @@ function highlightCups(idx) {
 }
 
 function updateBigCup() {
-	const fullGlasses = document.querySelectorAll('.cup-small.full').length;
+	const fullGlasses = document.querySelectorAll('.marcador-pequeno.full').length;
 	const totalGlasses = smallCups.length;
 	
 	// hide the .percentage if the glass is empty
