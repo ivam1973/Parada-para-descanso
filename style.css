@@ -135,7 +135,7 @@ h3 {
 }
 
 .social-panel {	
-	background-color: #fff;
+	background-color: rgb(170, 243, 237);
 	border-radius: 50%;
 	box-shadow: 0 16px 31px -17px rgba(0,31,97,0.6);
 	border: 0;
@@ -165,7 +165,7 @@ h3 {
 }
 
 .social-panel p {
-	background-color: #001F61;
+	background-color: rgb(84, 161, 155);
 	border-radius: 65%;
 	color: #fff;
 	font-size: 14px;
@@ -228,10 +228,9 @@ h3 {
 }
 
 .floating-btn {
-	border-radius: 26.5px;
-	background-color: #001F61;
-	border: 1px solid #001F61;
-	box-shadow: 0 16px 22px -17px #03153B;
+	border-radius: 62%;
+	background-color: rgb(84, 161, 155);
+	border: 0;	
 	color: #fff;
 	cursor: pointer;
 	font-size: 16px;
